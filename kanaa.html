@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kanaa | Fertility Center</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Kanaa - Multipurpose Technology Bootstrap Template"
+    />
+    <meta
+      name="keywords"
+      content="bootstrap, business, creative agency, mobile app showcase, saas, fintech, finance, online courses, software, medical, conference landing, services, e-commerce, shopping cart, multipurpose, shop, ui kit, marketing, seo, landing, blog, portfolio, html5, css3, javascript, gallery, slider, touch, creative"
+    />
+    <meta name="author" content="Createx Studio" />
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon and Touch Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="assets/favicon/safari-pinned-tab.svg"
+      color="#6366f1"
+    />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#080032" />
+    <meta
+      name="msapplication-config"
+      content="assets/favicon/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Vendor Styles -->
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/boxicons/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css" />
+
+    <!-- Page loading styles -->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.4s 0.2s ease-in-out;
+        transition: all 0.4s 0.2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .dark-mode .page-loading {
+        background-color: #0b0f19;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #9397ad;
+      }
+      .dark-mode .page-loading-inner > span {
+        color: #fff;
+        opacity: 0.6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: 0.75rem;
+        vertical-align: text-bottom;
+        border: 0.15em solid #b4b7c9;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner 0.75s linear infinite;
+        animation: spinner 0.75s linear infinite;
+      }
+      .dark-mode .page-spinner {
+        border-color: rgba(255, 255, 255, 0.4);
+        border-right-color: transparent;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- Theme mode -->
+    <script>
+      let mode = window.localStorage.getItem('mode'),
+        root = document.getElementsByTagName('html')[0];
+      if (mode !== null && mode === 'dark') {
+        root.classList.add('dark-mode');
+      } else {
+        root.classList.remove('dark-mode');
+      }
+    </script>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1000);
+        };
+      })();
+    </script>
+  </head>
+
+  <!-- Body -->
+  <body>
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div>
+        <span>Loading...</span>
+      </div>
+    </div>
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+      <!-- Navbar -->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+      <header class="header navbar navbar-expand-lg bg-light navbar-sticky">
+        <div class="container px-3">
+          <a href="index.html" class="navbar-brand pe-3">
+            <img
+              src="http://kanaafertility.com/assets/images/logo.png"
+              alt="Kanaa Logo"
+              width="96px"
+            />
+          </a>
+          <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+              <h5 class="offcanvas-title">Menu</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a
+                    href="#"
+                    class="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    >Services</a
+                  >
+                  <div class="dropdown-menu">
+                    <div class="d-lg-flex pt-lg-3">
+                      <div class="mega-dropdown-column">
+                        <h6 class="px-3 mb-2">Treatments</h6>
+                        <ul class="list-unstyled mb-3">
+                          <li>
+                            <a href="about-v1.html" class="dropdown-item py-1"
+                              >Ovulation Induction</a
+                            >
+                          </li>
+                          <li>
+                            <a href="about-v2.html" class="dropdown-item py-1"
+                              >IUI</a
+                            >
+                          </li>
+                          <li>
+                            <a href="about-v2.html" class="dropdown-item py-1"
+                              >IVF & ICSI</a
+                            >
+                          </li>
+                          <li>
+                            <a href="about-v2.html" class="dropdown-item py-1"
+                              >IUI</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="mega-dropdown-column">
+                        <h6 class="px-3 mb-2">360 Women Health care</h6>
+                        <ul class="list-unstyled mb-3">
+                          <li>
+                            <a href="holistic.html" class="dropdown-item py-1"
+                              >Lifestyle coaching</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="portfolio-list.html"
+                              class="dropdown-item py-1"
+                              >Sexual Health</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    href="#"
+                    class="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    >About us</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="account-details.html" class="dropdown-item"
+                        >About us</a
+                      >
+                    </li>
+                    <li>
+                      <a href="account-details.html" class="dropdown-item"
+                        >Our Doctors</a
+                      >
+                    </li>
+                    <li>
+                      <a href="account-security.html" class="dropdown-item"
+                        >Press</a
+                      >
+                    </li>
+                    <li>
+                      <a href="account-notifications.html" class="dropdown-item"
+                        >Careers</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a href="components/typography.html" class="nav-link"
+                    >Health Assessments</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a href="docs/getting-started.html" class="nav-link"
+                    >A-Z of Fertility</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="offcanvas-header border-top">
+              <a
+                href="https://themes.getbootstrap.com/product/silicon-business-technology-template-ui-kit/"
+                class="btn btn-primary w-100"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="bx bx-paper-plane fs-4 lh-1 me-1"></i>
+                &nbsp;Contact us
+              </a>
+            </div>
+          </div>
+          <!-- <div
+            class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4"
+            data-bs-toggle="mode"
+          >
+            <input type="checkbox" class="form-check-input" id="theme-mode" />
+            <label class="form-check-label d-none d-sm-block" for="theme-mode"
+              >Light</label
+            >
+            <label class="form-check-label d-none d-sm-block" for="theme-mode"
+              >Dark</label
+            >
+          </div> -->
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a
+            href="https://themes.getbootstrap.com/product/silicon-business-technology-template-ui-kit/"
+            class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="bx bx-paper-plane fs-5 lh-1 me-1"></i>
+            &nbsp;Contact us
+          </a>
+        </div>
+      </header>
+
+      <!-- Hero slider + BG parallax -->
+      <section
+        class="jarallax dark-mode bg-dark py-xxl-5"
+        data-jarallax
+        data-speed="0.4"
+      >
+        <!-- Swiper tabs -->
+        <div class="swiper-tabs position-absolute top-0 start-0 w-100 h-100">
+          <div
+            id="image-1"
+            class="jarallax position-absolute top-0 start-0 w-100 h-100 swiper-tab active"
+            data-jarallax
+            data-speed="0.4"
+          >
+            <span
+              class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-35"
+            ></span>
+            <div
+              class="jarallax-img"
+              style="
+                background-image: url(http://kanaafertility.com/assets/images/slider3.jpg);
+              "
+            ></div>
+          </div>
+          <div
+            id="image-2"
+            class="jarallax position-absolute top-0 start-0 w-100 h-100 swiper-tab"
+            data-jarallax
+            data-speed="0.4"
+          >
+            <span
+              class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-35"
+            ></span>
+            <div
+              class="jarallax-img"
+              style="
+                background-image: url(http://kanaafertility.com/assets/images/slider4.jpg);
+              "
+            ></div>
+          </div>
+          <div
+            id="image-3"
+            class="jarallax position-absolute top-0 start-0 w-100 h-100 swiper-tab"
+            data-jarallax
+            data-speed="0.4"
+          >
+            <span
+              class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-35"
+            ></span>
+            <div
+              class="jarallax-img"
+              style="
+                background-image: url(http://kanaafertility.com/assets/images/slider1.jpg);
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Swiper slider -->
+        <div class="container position-relative zindex-5 py-5">
+          <div class="row py-2 py-md-3">
+            <div class="col-xl-5 col-lg-7 col-md-9">
+              <!-- Slider controls (Prev / next) -->
+              <div
+                class="d-flex justify-content-center justify-content-md-start pb-3 mb-3"
+              >
+                <button
+                  type="button"
+                  id="case-study-prev"
+                  class="btn btn-prev btn-icon btn-sm bg-white me-2"
+                >
+                  <i class="bx bx-chevron-left"></i>
+                </button>
+                <button
+                  type="button"
+                  id="case-study-next"
+                  class="btn btn-next btn-icon btn-sm bg-white ms-2"
+                >
+                  <i class="bx bx-chevron-right"></i>
+                </button>
+              </div>
+
+              <!-- Card -->
+              <div class="card bg-white shadow-sm p-3">
+                <div class="card-body">
+                  <div
+                    class="swiper"
+                    data-swiper-options='{
+                      "spaceBetween": 30,
+                      "loop": true,
+                      "tabs": true,
+                      "pagination": {
+                        "el": "#case-study-pagination",
+                        "clickable": true
+                      },
+                      "navigation": {
+                        "prevEl": "#case-study-prev",
+                        "nextEl": "#case-study-next"
+                      }
+                    }'
+                  >
+                    <div class="swiper-wrapper">
+                      <!-- Item -->
+                      <div class="swiper-slide" data-swiper-tab="#image-1">
+                        <img
+                          src="assets/img/landing/software-company/case-study-logo01.png"
+                          class="d-block mb-3"
+                          width="72"
+                          alt="Logo"
+                        />
+                        <h3 class="mb-2">Your health in (Y)OUR hands!</h3>
+                        <p class="fs-sm text-muted border-bottom pb-3 mb-3">
+                          Prevention rather than treatment is the way forward
+                        </p>
+                        <p class="pb-2 pb-lg-3 mb-3">
+                          With our holistic approach, let us show you the right
+                          way to prevent disease or treat the cause rather than
+                          the symptoms.
+                        </p>
+                        <!-- <a href="#" class="btn btn-primary">View case study</a> -->
+                      </div>
+
+                      <!-- Item -->
+                      <div class="swiper-slide" data-swiper-tab="#image-2">
+                        <img
+                          src="assets/img/landing/software-company/case-study-logo02.png"
+                          class="d-block mb-3"
+                          width="72"
+                          alt="Logo"
+                        />
+                        <h3 class="mb-2">
+                          Adolescence to Menopause and beyond…
+                        </h3>
+                        <p class="fs-sm text-muted border-bottom pb-3 mb-3">
+                          we are there to care!
+                        </p>
+                        <p class="pb-2 pb-lg-3 mb-3">
+                          We deal with women's health problems across all ages.
+                        </p>
+                      </div>
+
+                      <!-- Item -->
+                      <div class="swiper-slide" data-swiper-tab="#image-3">
+                        <img
+                          src="assets/img/landing/software-company/case-study-logo01.png"
+                          class="d-block mb-3"
+                          width="72"
+                          alt="Logo"
+                        />
+                        <h3 class="mb-2">Are you 1 in 8?</h3>
+                        <p class="fs-sm text-muted border-bottom pb-3 mb-3">
+                          Let us help!
+                        </p>
+                        <p class="pb-2 pb-lg-3 mb-3">
+                          Did you know that 1 in 8 couples report difficulty in
+                          getting pregnant.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pagination (bullets) -->
+              <div class="dark-mode pt-4 mt-3">
+                <div
+                  id="case-study-pagination"
+                  class="swiper-pagination position-relative bottom-0"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="container pt-5 mt-2 mt-md-4 mt-lg-5">
+        <div class="row pt-xl-3">
+          <div class="col-md-5 text-center text-md-start pb-5">
+            <h1 class="mb-4">Kanaa Fertility Center</h1>
+            <p class="fs-lg pb-lg-3 mb-4">
+              We provide you with the highest quality of care that results in a
+              healthy happy family. Our team—includes board-certified
+              reproductive and infertility specialists, nurses, and lab
+              professionals who are solely focused on the needs of people
+              dealing with fertility-related issues, questions, or concerns.
+            </p>
+            <a
+              href="about-v2.html"
+              class="btn btn-primary shadow-primary btn-lg"
+              >More About Us</a
+            >
+            <div
+              class="d-flex justify-content-center justify-content-md-between pt-4 pt-lg-5"
+            >
+              <div class="mx-3 mx-md-0">
+                <div class="display-3 text-dark mb-1">3500+</div>
+                <span
+                  >Successful conceptions and deliveries after treatment</span
+                >
+              </div>
+              <div class="mx-3 mx-md-0">
+                <div class="display-3 text-dark mb-1">15+</div>
+                <span>Years of team experience in reproductive medicine</span>
+              </div>
+            </div>
+            <!-- <div class="mt-3 mt-sm-0 pt-4 pt-sm-5 mt-xl-4">
+              <h2 class="h6 mb-4">Some of our awards:</h2>
+              <img
+                src="assets/img/landing/software-company/awards.svg"
+                alt="Awards"
+              />
+            </div> -->
+          </div>
+          <div
+            class="col-xl-6 col-md-7 offset-xl-1 pb-4 pb-sm-3 pb-lg-0 mb-4 mb-sm-5 mb-lg-0"
+          >
+            <img
+              src="assets/img/baby-01.jpg"
+              class="rounded-3 shadow-sm"
+              alt="Image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section class="bg-secondary pb-md-2 pb-lg-5">
+        <div
+          class="d-none d-lg-block"
+          style="margin-top: -60px; padding-top: 60px"
+        ></div>
+        <div class="container pb-4 pt-5">
+          <h2 class="h1 text-center pt-1 pt-xl-2 mb-4">Why Choose Us?</h2>
+          <p class="fs-lg text-muted text-center pb-4 mb-2 mb-lg-3">
+            Our medical center provides a wide range of fertility care services.
+          </p>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 pb-xl-3">
+            <div class="col text-center border-end">
+              <div
+                class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4"
+              >
+                <img
+                  src="assets/img/landing/software-company/features/03.svg"
+                  width="32"
+                  alt="Icon"
+                />
+              </div>
+              <h3 class="h5 mb-2 mb-lg-0">Results that speak for themselves</h3>
+            </div>
+            <div class="col text-center border-end">
+              <div
+                class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4"
+              >
+                <img
+                  src="assets/img/landing/software-company/features/02.svg"
+                  width="32"
+                  alt="Icon"
+                />
+              </div>
+              <h3 class="h5 mb-2 mb-lg-0">
+                Decades of experience, at your service
+              </h3>
+            </div>
+            <div class="col text-center border-end">
+              <div
+                class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4"
+              >
+                <img
+                  src="assets/img/landing/software-company/features/01.svg"
+                  width="32"
+                  alt="Icon"
+                />
+              </div>
+              <h3 class="h5 mb-2 mb-lg-0">
+                With you, at every step of the way
+              </h3>
+            </div>
+            <div class="col text-center">
+              <div
+                class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4"
+              >
+                <img
+                  src="assets/img/landing/software-company/features/04.svg"
+                  width="32"
+                  alt="Icon"
+                />
+              </div>
+              <h3 class="h5 mb-2 mb-lg-0">
+                Individualized Management Plan for each couple
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="container py-5 my-2 my-md-4 my-lg-5">
+        <div class="container pb-4">
+          <h2 class="h1 text-center">Why choose Kanaa?</h2>
+          <!-- <p class="text-center pb-1 pb-sm-0 mb-4 mb-sm-5">Nisi augue at ridiculus  ullamcorper ibendum  nunc dignissim </p> -->
+          <div class="row align-items-lg-center">
+            <div class="col-sm-6 col-lg-3">
+              <div class="pe-lg-4 pe-xl-5">
+                <div class="text-center text-lg-end pb-2 mb-4 mb-xl-5">
+                  <!-- <img
+                    src="assets/img/services/single/icons/01.svg"
+                    class="d-inline-block"
+                    width="56"
+                    alt="Icon"
+                  /> -->
+                  <div class="d-inline-block">
+                    <i class="bx bx-paper-plane fs-1 lh-1 me-1"></i>
+                  </div>
+                  <h3 class="h5 pt-1 my-2">Searching for answers?</h3>
+                  <p class="fs-sm mb-0">
+                    Our Fertility Program is designed to address each couple's
+                    unique medical, emotional and financial needs.
+                  </p>
+                </div>
+                <div class="text-center text-lg-end pb-2 mb-4 mb-xl-5">
+                  <img
+                    src="assets/img/services/single/icons/02.svg"
+                    class="d-inline-block"
+                    width="56"
+                    alt="Icon"
+                  />
+                  <h3 class="h5 pt-1 my-2">One size does not fit all!</h3>
+                  <p class="fs-sm mb-0">
+                    Difficulty in getting pregnant is a multi-faceted problem
+                    and there is a definite need for a personalised couple-based
+                    approach.
+                  </p>
+                </div>
+                <div class="text-center text-lg-end">
+                  <img
+                    src="assets/img/services/single/icons/03.svg"
+                    class="d-inline-block"
+                    width="56"
+                    alt="Icon"
+                  />
+                  <h3 class="h5 pt-1 my-2">Let's make a plan!</h3>
+                  <p class="fs-sm mb-0">
+                    we strongly believe that the main decision-makers in your
+                    treatment should always remain YOU!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+              <div
+                class="ratio ratio-1x1 border rounded-circle position-relative mx-auto"
+                style="max-width: 580px"
+              >
+                <div class="p-5">
+                  <img
+                    src="assets/img/why-kanaa.jpg"
+                    class="rounded-circle"
+                    alt="Tooth"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="ps-lg-4 ps-xl-5">
+                <div class="text-center text-lg-start pb-2 mb-4 mb-xl-5">
+                  <img
+                    src="assets/img/services/single/icons/04.svg"
+                    class="d-inline-block"
+                    width="56"
+                    alt="Icon"
+                  />
+                  <h3 class="h5 pt-1 my-2">We keep it real!</h3>
+                  <p class="fs-sm mb-0">
+                    We believe in giving you age and case-specific chances of
+                    success with any treatment option.
+                  </p>
+                </div>
+                <div class="text-center text-lg-start pb-2 mb-4 mb-xl-5">
+                  <img
+                    src="assets/img/services/single/icons/05.svg"
+                    class="d-inline-block"
+                    width="56"
+                    alt="Icon"
+                  />
+                  <h3 class="h5 pt-1 my-2">Blindfolds off, please!</h3>
+                  <p class="fs-sm mb-0">
+                    we want each and every couple to be aware of each and every
+                    step of their treatment.
+                  </p>
+                </div>
+                <!-- <div class="text-center text-lg-start">
+                  <img
+                    src="assets/img/services/single/icons/06.svg"
+                    class="d-inline-block"
+                    width="56"
+                    alt="Icon"
+                  />
+                  <h3 class="h5 pt-1 my-2">Aesthetic dentistry</h3>
+                  <p class="fs-sm mb-0">
+                    Pellentesque rhoncus viverra vestibulum, purus purus
+                  </p>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Instagram post -->
+      <section class="pt-5 pb-5 mb-3 mb-md-4 mb-lg-5">
+        <div class="container text-center">
+          <h2 class="h1 pt-1 mb-4">Delivering Happiness Everyday</h2>
+          <div class="row justify-content-center mb-md-2 mb-lg-5">
+            <div class="col-lg-6 col-md-8">
+              <p class="fs-lg text-muted mb-lg-0">
+                Share your success story and give hope and reassurance to others
+                who may be experiencing difficult moments in their own journey
+                to parenthood.
+              </p>
+            </div>
+          </div>
+          <div class="position-relative rounded-3 overflow-hidden mb-lg-3">
+            <div
+              class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center zindex-5"
+            >
+              <a
+                href="https://www.instagram.com/drpriyakalyani.official/"
+                class="btn btn-video btn-icon btn-xl stretched-link bg-white"
+                data-bs-toggle="video"
+              >
+                <i class="bx bx-play"></i>
+              </a>
+            </div>
+            <span
+              class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-35"
+            ></span>
+            <img
+              src="http://kanaafertility.com/assets/images/baby-college.jpg"
+              alt="Cover image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- News slider -->
+      <section class="bg-secondary border-bottom border-light py-5">
+        <div class="container py-md-3 py-lg-5">
+          <h2 class="h1 text-center pb-2">News &amp; Insights</h2>
+          <div class="position-relative mx-md-2 px-md-5">
+            <!-- Slider controls (Prev / next) -->
+            <button
+              type="button"
+              id="news-prev"
+              class="btn btn-prev btn-icon btn-sm position-absolute top-50 start-0 translate-middle-y mt-n4 d-none d-md-inline-flex"
+            >
+              <i class="bx bx-chevron-left"></i>
+            </button>
+            <button
+              type="button"
+              id="news-next"
+              class="btn btn-next btn-icon btn-sm position-absolute top-50 end-0 translate-middle-y mt-n4 d-none d-md-inline-flex"
+            >
+              <i class="bx bx-chevron-right"></i>
+            </button>
+
+            <!-- Swiper slider -->
+            <div
+              class="swiper swiper-nav-onhover mx-n2"
+              data-swiper-options='{
+              "slidesPerView": 1,
+              "loop": true,
+              "spaceBetween": 8,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "clickable": true
+              },
+              "navigation": {
+                "prevEl": "#news-prev",
+                "nextEl": "#news-next"
+              },
+              "breakpoints": {
+                "0": {
+                  "slidesPerView": 1
+                },
+                "560": {
+                  "slidesPerView": 2
+                },
+                "992": {
+                  "slidesPerView": 3
+                }
+              }
+            }'
+            >
+              <div class="swiper-wrapper">
+                <!-- Item -->
+                <div class="swiper-slide h-auto py-3">
+                  <article
+                    class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2"
+                  >
+                    <div class="card-body pb-0">
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-3"
+                      >
+                        <a
+                          href="#"
+                          class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2"
+                          >Tech</a
+                        >
+                        <span class="fs-sm text-muted">1 day ago</span>
+                      </div>
+                      <h3 class="h4">
+                        <a href="blog-single.html" class="stretched-link"
+                          >How the Millennial Lifestyle Changes as Service
+                          Prices Rise</a
+                        >
+                      </h3>
+                      <p class="mb-0">
+                        Sit facilisis dolor arcu, fermentum vestibulum arcu
+                        elementum imperdiet. Mauris duis eleifend faucibus amet
+                        sagittis.
+                      </p>
+                    </div>
+                    <div
+                      class="card-footer d-flex align-items-center py-4 text-muted border-top-0"
+                    >
+                      <div class="d-flex align-items-center me-3">
+                        <i class="bx bx-like fs-lg me-1"></i>
+                        <span class="fs-sm">2</span>
+                      </div>
+                      <div class="d-flex align-items-center me-3">
+                        <i class="bx bx-comment fs-lg me-1"></i>
+                        <span class="fs-sm">0</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <i class="bx bx-share-alt fs-lg me-1"></i>
+                        <span class="fs-sm">3</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- Item -->
+                <div class="swiper-slide h-auto py-3">
+                  <article
+                    class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2"
+                  >
+                    <div class="card-body pb-0">
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-3"
+                      >
+                        <a
+                          href="#"
+                          class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2"
+                          >Strategy</a
+                        >
+                        <span class="fs-sm text-muted">12 hours ago</span>
+                      </div>
+                      <h3 class="h4">
+                        <a href="blog-single.html" class="stretched-link"
+                          >Mobile App Generates Data for the Energy
+                          Management</a
+                        >
+                      </h3>
+                      <p class="mb-0">
+                        Sociis sit risus id. Sit facilisis dolor arcu, fermentum
+                        vestibulum arcu ele. Pulvinar at maecenas maecenas
+                        pharetra, tincidunt sollicitudin in in.
+                      </p>
+                    </div>
+                    <div
+                      class="card-footer d-flex align-items-center py-4 text-muted border-top-0"
+                    >
+                      <div class="d-flex align-items-center me-3">
+                        <i class="bx bx-like fs-lg me-1"></i>
+                        <span class="fs-sm">8</span>
+                      </div>
+                      <div class="d-flex align-items-center me-3">
+                        <i class="bx bx-comment fs-lg me-1"></i>
+                        <span class="fs-sm">4</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <i class="bx bx-share-alt fs-lg me-1"></i>
+                        <span class="fs-sm">2</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- Item -->
+                <div class="swiper-slide h-auto py-3">
+                  <article
+                    class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2"
+                  >
+                    <div class="card-body pb-0">
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-3"
+                      >
+                        <a
+                          href="#"
+                          class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2"
+                          >Software</a
+                        >
+                        <span class="fs-sm text-muted">May 24, 2021</span>
+                      </div>
+                      <h3 class="h4">
+                        <a href="blog-single.html" class="stretched-link"
+                          >What the Software Stock Slump Means for the Market</a
+                        >
+                      </h3>
+                      <p class="mb-0">
+                        Id mollis consectetur congue egestas egestas suspendisse
+                        blandit justo. Tellus augue commodo id quis tempus etiam
+                        pulvinar at maecenas.
+                      </p>
+                    </div>
+                    <div
+                      class="card-footer d-flex align-items-center py-4 text-muted border-top-0"
+                    >
+                      <div class="d-flex align-items-center me-3">
+                        <i class="bx bx-like fs-lg me-1"></i>
+                        <span class="fs-sm">6</span>
+                      </div>
+                      <div class="d-flex align-items-center me-3">
+                        <i class="bx bx-comment fs-lg me-1"></i>
+                        <span class="fs-sm">1</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <i class="bx bx-share-alt fs-lg me-1"></i>
+                        <span class="fs-sm">5</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- Item -->
+                <div class="swiper-slide h-auto py-3">
+                  <article
+                    class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2"
+                  >
+                    <div class="card-body pb-0">
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-3"
+                      >
+                        <a
+                          href="#"
+                          class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2"
+                          >Startups</a
+                        >
+                        <span class="fs-sm text-muted">Sep 3, 2021</span>
+                      </div>
+                      <h3 class="h4">
+                        <a href="blog-single.html" class="stretched-link"
+                          >5 Bad Landing Page Examples & How We Would Fix
+                          Them</a
+                        >
+                      </h3>
+                      <p class="mb-0">
+                        Totam, soluta placeat hic adipisci reprehenderit iusto
+                        est nulla dolorum doloremque inventore suscipit
+                        consequuntur distinctio id.
+                      </p>
+                    </div>
+                    <div
+                      class="card-footer d-flex align-items-center py-4 text-muted border-top-0"
+                    >
+                      <div class="d-flex align-items-center me-3">
+                        <i class="bx bx-like fs-lg me-1"></i>
+                        <span class="fs-sm">8</span>
+                      </div>
+                      <div class="d-flex align-items-center me-3">
+                        <i class="bx bx-comment fs-lg me-1"></i>
+                        <span class="fs-sm">7</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <i class="bx bx-share-alt fs-lg me-1"></i>
+                        <span class="fs-sm">3</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- Item -->
+                <div class="swiper-slide h-auto py-3">
+                  <article
+                    class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2"
+                  >
+                    <div class="card-body pb-0">
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-3"
+                      >
+                        <a
+                          href="#"
+                          class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2"
+                          >Technology</a
+                        >
+                        <span class="fs-sm text-muted">Aug 19, 2021</span>
+                      </div>
+                      <h3 class="h4">
+                        <a href="blog-single.html" class="stretched-link"
+                          >Why UX Design Matters and How it Affects Ranking</a
+                        >
+                      </h3>
+                      <p class="mb-0">
+                        Quaerat quos assumenda numquam dolorem, repellendus est,
+                        itaque sint et odio perferendis laudantium laboriosam.
+                      </p>
+                    </div>
+                    <div
+                      class="card-footer d-flex align-items-center py-4 text-muted border-top-0"
+                    >
+                      <div class="d-flex align-items-center me-3">
+                        <i class="bx bx-like fs-lg me-1"></i>
+                        <span class="fs-sm">5</span>
+                      </div>
+                      <div class="d-flex align-items-center me-3">
+                        <i class="bx bx-comment fs-lg me-1"></i>
+                        <span class="fs-sm">3</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <i class="bx bx-share-alt fs-lg me-1"></i>
+                        <span class="fs-sm">9</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Pagination (bullets) -->
+              <div
+                class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer dark-mode bg-dark pt-5 pb-4 pb-lg-5">
+      <div class="container pt-lg-4">
+        <div class="row pb-5">
+          <div class="col-lg-4 col-md-6">
+            <div class="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">
+              Kanaa
+            </div>
+            <p class="fs-sm text-light opacity-70 pb-lg-3 mb-4">
+              Proin ipsum pharetra, senectus eget scelerisque varius pretium
+              platea velit. Lacus, eget eu vitae nullam proin turpis etiam mi
+              sit. Non feugiat feugiat egestas nulla nec. Arcu tempus, eget
+              elementum dolor ullamcorper sodales ultrices eros.
+            </p>
+            <form class="needs-validation" novalidate>
+              <label for="subscr-email" class="form-label"
+                >Subscribe to our newsletter</label
+              >
+              <div class="input-group">
+                <input
+                  type="email"
+                  id="subscr-email"
+                  class="form-control rounded-start ps-5"
+                  placeholder="Your email"
+                  required
+                />
+                <i
+                  class="bx bx-envelope fs-lg text-muted position-absolute top-50 start-0 translate-middle-y ms-3 zindex-5"
+                ></i>
+                <div class="invalid-tooltip position-absolute top-100 start-0">
+                  Please provide a valid email address.
+                </div>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </div>
+            </form>
+          </div>
+          <div
+            class="col-xl-6 col-lg-7 col-md-5 offset-xl-2 offset-md-1 pt-4 pt-md-1 pt-lg-0"
+          >
+            <div id="footer-links" class="row">
+              <div class="col-lg-4">
+                <h6 class="mb-2">
+                  <a
+                    href="#useful-links"
+                    class="d-block text-dark dropdown-toggle d-lg-none py-2"
+                    data-bs-toggle="collapse"
+                    >Useful Links</a
+                  >
+                </h6>
+                <div
+                  id="useful-links"
+                  class="collapse d-lg-block"
+                  data-bs-parent="#footer-links"
+                >
+                  <ul class="nav flex-column pb-lg-1 mb-lg-3">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Home</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Services</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Case Studies</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >About Us</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >News &amp; Insights</a
+                      >
+                    </li>
+                  </ul>
+                  <ul class="nav flex-column mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Terms &amp; Conditions</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Privacy Policy</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-4 col-lg-3">
+                <h6 class="mb-2">
+                  <a
+                    href="#social-links"
+                    class="d-block text-dark dropdown-toggle d-lg-none py-2"
+                    data-bs-toggle="collapse"
+                    >Socials</a
+                  >
+                </h6>
+                <div
+                  id="social-links"
+                  class="collapse d-lg-block"
+                  data-bs-parent="#footer-links"
+                >
+                  <ul class="nav flex-column mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Facebook</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >LinkedIn</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Twitter</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"
+                        >Instagram</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-4 col-lg-5 pt-2 pt-lg-0">
+                <h6 class="mb-2">Contact Us</h6>
+                <a href="mailto:email@example.com" class="fw-medium"
+                  >email@example.com</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <p
+          class="nav d-block fs-xs text-center text-md-start pb-2 pb-lg-0 mb-0"
+        >
+          <span class="text-light opacity-50"
+            >&copy; All rights reserved. Made by
+          </span>
+          <a
+            class="nav-link d-inline-block p-0"
+            href="https://createx.studio/"
+            target="_blank"
+            rel="noopener"
+            >Createx Studio</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
+  </body>
+</html>
